@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    stage{
+        steps{
+            git 'https://github.com/sunnydevops/Jenkins_Upgradev3.git'
+        }
+    }
     stages {
         stage('Build Application') {
             steps {
