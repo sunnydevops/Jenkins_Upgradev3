@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages{
-        steps{
-            git 'https://github.com/sunnydevops/Jenkins_Upgradev3.git'
+        stage('Cloning Project'){
+            steps{
+              git 'https://github.com/sunnydevops/Jenkins_Upgradev3.git'
+            }
         }
-    }
-    stages {
         stage('Build Application') {
             steps {
                 sh 'mvn -f java-tomcat-sample/pom.xml clean package'
